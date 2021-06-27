@@ -26,6 +26,7 @@ export default async () => {
 
   app.use(CORS());
   app.use(`/${APIversion}/`, routes);
+  app.get('/', (req, res) => res.status(200).send("Hello from stuti's email service"));
   try {
     db();
     scheduler.start();

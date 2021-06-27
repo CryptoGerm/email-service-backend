@@ -4,7 +4,7 @@ import _map from 'lodash/map';
 import sendEmail from '../email';
 
 import { Mail } from '../../models/Mail';
-// */5 * * * * *
+
 export default cron.schedule('* */5 * * *', async () => {
   const mails = await Mail.find({ scheduledMail: true });
   _map(mails, (item) =>

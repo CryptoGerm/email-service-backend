@@ -23,9 +23,7 @@ const config = {
   sendGridKey: process.env.SENDGRID_API_KEY,
   db: {
     uri:
-      // process.env.NODE_ENV === 'development'
-      //   ? `mongodb://${process.env.MONGO_HOST}/${process.env.MONGO_DBNAME}`
-      //   :
+      //  `mongodb://${process.env.MONGO_HOST}/${process.env.MONGO_DBNAME}`,
       `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}/${process.env.MONGO_DBNAME}?retryWrites=true&w=majority`,
     dbName: process.env.MONGO_DBNAME,
   },
