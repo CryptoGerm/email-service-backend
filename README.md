@@ -6,6 +6,7 @@ App version - v1
 
 ## Steps to run the backend server
 
+##### (please pass a valid mongodb uri in .env)
 
 ###### Step 1 - Install packages
 
