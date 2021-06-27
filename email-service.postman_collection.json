@@ -1,0 +1,260 @@
+{
+	"info": {
+		"_postman_id": "3814db0a-00d7-4dfc-a626-d0a066e62ba1",
+		"name": "email-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hopetest@gmail.com\",\n    \"password\": \"pass123\",\n    \"name\": \"hope\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/register",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hopeop@gmail.com\",\n    \"password\": \"pass123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/login",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVkZDU4Njk4NTBhMTg5NzM0NjhkMiIsImlhdCI6MTYyNDYyOTAxNywiZXhwIjoxNjMzMjY5MDE3fQ.Gcbi8xacDyV90Dw-Z7CnO6y0T1ElFB9mgzSGf_1usuA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/user/details",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"details"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Mail",
+			"item": [
+				{
+					"name": "Create Scheduled Mail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\" : \"stutichaturvedi19@gmail.com\",\n    \"from\": \"500076395@stu.upes.ac.in\",\n    \"subject\" : \"Hello World 2\",\n    \"mailBody\": \"This is a test 2\",\n    \"schedule\": \"*/1 * * * * *\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/mail/create",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mail",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Scheduled Mails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwZDVkZDU4Njk4NTBhMTg5NzM0NjhkMiIsImlhdCI6MTYyNDYyOTAxNywiZXhwIjoxNjMzMjY5MDE3fQ.Gcbi8xacDyV90Dw-Z7CnO6y0T1ElFB9mgzSGf_1usuA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/mail/scheduled",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mail",
+								"scheduled"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sent Emails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/mail/sent",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mail",
+								"sent"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Send Mail",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"to\": \"hopeop@gmail.com\",\n    \"from\": \"500076395@stu.upes.ac.in\",\n    \"subject\": \"Hello World\",\n    \"mailBody\": \"This is a test\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/mail/send",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mail",
+								"send"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sent Scheduled Emails",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/api/mail/sent-scheduled",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"mail",
+								"sent-scheduled"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Server Health Check",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}",
+					"host": [
+						"{{url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
